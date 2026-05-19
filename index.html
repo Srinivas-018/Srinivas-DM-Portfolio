@@ -1,0 +1,476 @@
+<!--
+    File: index.html
+    Purpose: Hacker portfolio main page
+    Signed by: srinivas018
+    Date: 2025-10-16
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>srinivas018 | Cybersecurity Portfolio</title>
+    <meta name="description" content="Cybersecurity portfolio of Srinivas DM - ethical hacking, penetration testing, digital forensics, and security projects">
+    <meta name="author" content="srinivas018">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/animations.css">
+</head>
+<body>
+    <div class="hacker-background" aria-hidden="true">
+        <canvas id="matrixCanvas"></canvas>
+        <div class="hacker-scanlines"></div>
+        <div class="hacker-vignette"></div>
+    </div>
+    <!-- Terminal Boot Screen - signed: srinivas018 -->
+    <div id="bootScreen" class="boot-screen">
+        <div class="boot-content">
+            <div class="boot-header">
+                <pre class="ascii-art">
+
+<b> _   _     _     ____  _  __ _____  ____  
+| | | |   / \   / ___|| |/ /| ____||  _ \ 
+| |_| |  / _ \ | |    | ' / |  _|  | |_) |
+|  _  | / ___ \\ |___ | ' \ | |___ |  _ < 
+|_| |_|/_/   \_\\____||_|\_\|_____||_| \_\</b>
+</pre>
+            </div>
+            <div class="boot-terminal">
+                <p><span class="boot-prompt">[SYSTEM]</span> <span class="boot-text">Initializing system...</span></p>
+                <p><span class="boot-prompt">[BOOT]</span> <span class="boot-text">Loading core modules</span> <span class="boot-dots"></span></p>
+                <p><span class="boot-prompt">[INIT]</span> <span class="boot-text">Mounting file systems</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[LOAD]</span> <span class="boot-text">Starting network services</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[EXEC]</span> <span class="boot-text">Loading srinivas018_portfolio.sh</span> <span class="boot-dots"></span></p>
+                <p><span class="boot-prompt">[INIT]</span> <span class="boot-text">Initializing user interface</span> <span class="boot-status boot-ok">[OK]</span></p>
+                <p><span class="boot-prompt">[DONE]</span> <span class="boot-text">System ready</span> <span class="boot-status boot-ready">[READY]</span></p>
+            </div>
+            <div class="boot-progress">
+                <div class="boot-progress-bar"></div>
+            </div>
+            <p class="boot-footer">Press any key to continue... <span class="boot-sign">- srinivas018</span></p>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-content">
+            <div class="logo">&gt;_hacker.sh <span class="logo-sign">- srinivas018</span></div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" onclick="closeMenu()">About</a>
+                <a href="#skills" onclick="closeMenu()">Skills</a>
+                <a href="#experience" onclick="closeMenu()">Experience</a>
+                <a href="#education" onclick="closeMenu()">Education</a>
+                <a href="#certifications" onclick="closeMenu()">Certifications</a>
+                <a href="#projects" onclick="closeMenu()">Projects</a>
+                <a href="#blog" onclick="closeMenu()">Blog</a>
+                <a href="#contact" onclick="closeMenu()">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <div class="tag">// Cybersecurity student, Ethical Hacker and penetration tester</div>
+            <h1>SRINIVAS DM <small class="inline-sign">(srinivas018)</small></h1>
+            <p class="subtitle">MCA Graduate | Cybersecurity student building practical tools for defense and testing</p>
+            
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot dot-red"></div>
+                    <div class="terminal-dot dot-yellow"></div>
+                    <div class="terminal-dot dot-green"></div>
+                </div>
+                <div class="terminal-text">
+                    <p><span class="prompt">$</span> <span class="command">./get_profile.sh</span></p>
+                    <p class="output">Specializing in:</p>
+                    <p class="output"><span class="prompt">&gt;</span> Ethical Hacking</p>
+                    <p class="output"><span class="prompt">&gt;</span> Penetration Testing</p>
+                    <p class="output"><span class="prompt">&gt;</span> Digital Forensics</p>
+                    <br>
+                    <p><span class="prompt">$</span> <span class="command">cat contact.txt</span></p>
+                    <p class="output">GitHub: <a href="https://github.com/Srinivas-018" target="_blank" class="link">github.com/Srinivas-018</a> <span class="muted">- by srinivas018</span></p>
+                    <br>
+                    <p><span class="prompt">$</span> <span class="output">_</span><span style="animation: blink 1s infinite;">|</span></p>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                <!-- Quick sign -->
+                <span class="cta-sign">signed: srinivas018</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <p class="about-intro">
+                        Hi! I'm <span class="highlight">SRINIVAS DM</span>, an MCA final-year student specializing in cybersecurity,
+                        digital forensics, and network security. <span class="about-sign">- srinivas018</span>
+                    </p>
+                    <p>
+                        I am actively seeking internships and full-time opportunities in security. I have built hands-on
+                        projects including a keylogger-based Cheating Detection System, a Network Intrusion Detection
+                        System (NIDS), XRECON (recon automation), and CORTEX (an Android forensic web dashboard).
+                        I work with Nmap and Burp Suite for recon and web app testing, sharpen skills on TryHackMe,
+                        and hold Cisco certifications in Introduction to Cybersecurity and Computer Networking.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Months of Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">0</div>
+                            <div class="stat-label">Labs Completed</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dot dot-red"></div>
+                            <div class="code-dot dot-yellow"></div>
+                            <div class="code-dot dot-green"></div>
+                            <span class="code-title">about.js</span>
+                        </div>
+                        <div class="code-content">
+<pre><code><span class="code-keyword">const</span> <span class="code-variable">hacker</span> = {
+    <span class="code-property">name</span>: <span class="code-string">"srinivas018"</span>,
+    <span class="code-property">role</span>: <span class="code-string">"Cybersecurity Student &amp; Penetration Tester"</span>,
+    <span class="code-property">location</span>: <span class="code-string">"TUMKUR &amp; BANGALORE"</span>,
+    <span class="code-property">interests</span>: [
+        <span class="code-string">"Ethical Hacking"</span>,
+        <span class="code-string">"Network Security"</span>,
+        <span class="code-string">"Cybersecurity"</span>,
+        <span class="code-string">"Digital Forensics"</span>
+    ],
+    <span class="code-property">currentlyLearning</span>: [
+        <span class="code-string">"Advanced Penetration Testing"</span>,
+        <span class="code-string">"Threat Detection Engineering"</span>
+    ],
+    <span class="code-property">funFact</span>: <span class="code-string">"I love understanding how attacks work and building defenses to stop them"</span>
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3>Security Fundamentals</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Nmap</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Burp Suite</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Digital Forensics</span>
+                        <span>50%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="50%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in" style="animation-delay: 0.1s;">
+                <h3>Programming & Platforms</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Python</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Linux</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="60%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Network Security</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="70%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in" style="animation-delay: 0.2s;">
+                <h3>Practice & Workflow</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>TryHackMe Labs</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Threat Analysis</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="70%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Security Reporting</span>
+                        <span>78%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 0%" data-width="78%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Cybersecurity &amp; Ethical-Hacking Intern</h3>
+                    <div class="timeline-date">02-02-2026 - 29-05-2026</div>
+                    <p class="timeline-description">
+                        The internship focused on the defensive lifecycle of an enterprise-grade application,
+                        ensuring every deployment met rigorous security standards.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in" style="animation-delay: 0.1s;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Security Reviewer (Internship Function)</h3>
+                    <div class="timeline-date">2026</div>
+                    <p class="timeline-description">
+                            Core responsibility was bridging development and security through continuous auditing,
+                            vulnerability identification, and mitigation support.
+                        </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in" style="animation-delay: 0.2s;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Independent Security Projects</h3>
+                    <div class="timeline-date">2024 - Present</div>
+                    <p class="timeline-description">
+                        Designed and shipped practical tools including CORTEX, NIDS, XRECON,
+                        and a Cheating Detection System to strengthen offensive and defensive security skills.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>MCA</h3>
+                    <div class="timeline-date">2024 - 2026</div>
+                    <p class="timeline-description">
+                        Bangalore Institute of Technology, Bangalore.
+                        Focused on cybersecurity, digital forensics, and network security.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in" style="animation-delay: 0.1s;">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>BCA</h3>
+                    <div class="timeline-date">2021 - 2024</div>
+                    <p class="timeline-description">
+                        Government First Grade College, Tumkur.
+                        Built foundational knowledge in computer science and practical application development.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications & Awards</h2>
+        <div class="certifications-grid">
+            <div class="cert-card fade-in">
+                <div class="cert-icon">🛡️</div>
+                <div class="cert-badge">
+                    <div class="cert-badge-inner">
+                        <div class="cert-title">Cybersecurity</div>
+                        <div class="cert-issuer">Cisco</div>
+                    </div>
+                </div>
+                <h3>Introduction to Cybersecurity</h3>
+                <p class="cert-description">
+                    Foundational certification covering threat awareness, risk concepts,
+                    and core cybersecurity principles for modern systems.
+                </p>
+                <div class="cert-footer">
+                    <span class="cert-date">2025</span>
+                    <a href="https://www.credly.com/badges/583b0f38-ebc5-4281-b914-d92cfca13eef/linked_in?t=svto8a" target="_blank" class="project-link">Verify &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <h3>CORTEX</h3>
+                <p>CORTEX (Comprehensive Offline Retrieval and Tracking Evidence eXtractor) is a complete mobile device forensics analysis platform built with Python and Streamlit. <span class="project-sign">(by srinivas018)</span></p>
+                <a href="https://cortex-v1.streamlit.app/" target="_blank" class="project-link">Live &rarr;</a>
+            </div>
+            
+            <div class="project-card fade-in" style="animation-delay: 0.1s;">
+                <h3>NIDS</h3>
+                <p>Sentinel is a custom-built Network Intrusion Detection System built with Python and Scapy to monitor traffic in real time and catch suspicious behavior.</p>
+                <a href="https://github.com/Srinivas-018/NIDS" target="_blank" class="project-link">Repo &rarr;</a>
+            </div>
+            
+            <div class="project-card fade-in" style="animation-delay: 0.2s;">
+                <h3>XRECON</h3>
+                <p>X-RECON is an automated reconnaissance framework that combines Nmap precision with Python automation to generate structured, actionable intelligence.</p>
+                <a href="https://github.com/Srinivas-018/X-RECON" target="_blank" class="project-link">Repo &rarr;</a>
+            </div>
+
+            <div class="project-card fade-in" style="animation-delay: 0.3s;">
+                <h3>Cyber-Risk Quantification Tool</h3>
+                <p>Tool-137 is an AI-powered web app that quantifies cyber risks with real-time AI descriptions, risk recommendations, and reporting.</p>
+                <a href="https://github.com/Srinivas-018/cyber-risk-quantification-tool" target="_blank" class="project-link">Repo &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-grid">
+            <div class="blog-card fade-in">
+                <div class="blog-header">
+                    <div class="blog-date">Coming Soon</div>
+                </div>
+                <div class="blog-body">
+                    <h3>Security Writeups &amp; Labs <span class="post-sign">- srinivas018</span></h3>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Pentesting</span>
+                        <span class="blog-tag">Forensics</span>
+                        <span class="blog-tag">TryHackMe</span>
+                    </div>
+                    <p>Publishing soon: lab walkthroughs, reconnaissance methodology, and practical cybersecurity project breakdowns.</p>
+                    <a href="#contact" class="project-link">Get Notified &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-grid">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:srinivsprincea17@gmail.com">srinivsprincea17@gmail.com</a>
+                    <div class="contact-note">preferred contact: <strong>srinivas018</strong></div>
+                </div>
+
+                <div class="contact-item fade-in" style="animation-delay: 0.1s;">
+                    <div class="contact-icon">💼</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/Srinivas-018" target="_blank">github.com/Srinivas-018</a>
+                </div>
+
+                <div class="contact-item fade-in" style="animation-delay: 0.2s;">
+                    <div class="contact-icon">🔗</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/srinivas-dm018/" target="_blank">linkedin.com/in/srinivas-dm018</a>
+                </div>
+
+                <div class="contact-item fade-in" style="animation-delay: 0.3s;">
+                    <div class="contact-icon">🐦</div>
+                    <h3>X</h3>
+                    <a href="https://x.com/Just_joker_18" target="_blank">@Just_joker_18</a>
+                </div>
+            </div>
+
+            <div class="contact-form fade-in">
+                <form>
+                    <div class="form-group">
+                        <label>$ name --input</label>
+                        <input type="text" placeholder="srinivas018" required>
+                        <small class="field-sign">Signed by srinivas018</small>
+                    </div>
+                    <div class="form-group">
+                        <label>$ email --input</label>
+                        <input type="email" placeholder="srinivsprincea17@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>$ message --input</label>
+                        <textarea placeholder="Your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+    <p>&copy; 2025 <span class="signature">srinivas018</span>. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Made with ❤️ using HTML, CSS & JavaScript</p>
+        <p style="margin-top: 0.25rem; font-size: 0.8rem; color: #bbb;">Site signed and maintained by <strong>srinivas018</strong></p>
+    </footer>
+
+
+    <script src="src/js/main.js"></script>
+</body>
+</html>
+
+<!-- End of file - signed: srinivas018 -->
