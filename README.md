@@ -80,9 +80,6 @@ cyber-portfolio/
 ├── README.md             # Project documentation
 │
 └── src/                  # Source files
-  ├── assets/           # Static assets
-  │   └── images/       # Image files
-  │
   ├── css/              # Stylesheets
   │   ├── animations.css # Custom animation keyframes
   │   └── main.css       # Main stylesheet
