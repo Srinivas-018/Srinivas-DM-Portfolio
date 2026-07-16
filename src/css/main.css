@@ -786,52 +786,222 @@ h2::after {
     font-size: 0.9rem;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--content-gap);
+/* --- New Premium Project Rows Styles --- */
+
+.projects-rows-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
     margin-top: 3rem;
 }
 
-.project-card {
-    background: rgba(26, 26, 26, 0.8);
-    border: 1px solid rgba(0, 255, 140, 0.3);
-    border-radius: 10px;
-    padding: 2rem;
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+.project-row {
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+    background: rgba(26, 26, 26, 0.4);
+    border: 1.5px solid rgba(0, 255, 140, 0.15);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-row:hover {
+    border-color: rgba(0, 255, 140, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 255, 140, 0.08), 0 10px 30px rgba(0, 0, 0, 0.5);
+    background: rgba(26, 26, 26, 0.75);
+}
+
+/* Alternate row layouts on desktop */
+.project-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.project-image-column {
+    flex: 1.2;
+    min-width: 0;
+}
+
+.project-image-box {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(0, 255, 140, 0.35);
+    background: rgba(10, 10, 10, 0.85);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.project-image-box:hover {
+    border-color: #00D9FF;
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.25), inset 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+.project-full-img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain; /* ensures complete visibility, no cropped edges */
+    border-radius: 4px;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.project-image-box:hover .project-full-img {
+    transform: scale(1.02);
+}
+
+/* Image fallback descriptor */
+.project-image-box.no-image::after {
+    content: '🌐 CLI & Dashboard Application';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(18, 18, 18, 0.95);
+    color: #00FF8C;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* scanlines effect */
+.project-image-scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Hover link details overlay */
+.project-image-box .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00FF8C;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-shadow: 0 0 8px rgba(0, 255, 140, 0.6);
+    z-index: 2;
+}
+
+.project-image-box:hover .image-overlay {
+    opacity: 1;
+}
+
+.project-details-column {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    min-width: 0;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(0, 255, 140, 0.3);
-    border-color: rgba(0, 217, 255, 0.55);
-    will-change: transform;
+.project-header-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
 }
 
-.project-card h3 {
-    color: #00FF8C;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.project-card p {
-    color: #aaa;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.project-link {
+.project-index {
     color: #00D9FF;
-    text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    letter-spacing: 0.05em;
 }
 
-.project-link:hover {
+.project-sign {
+    color: #888;
+}
+
+.project-details-column h3 {
     color: #00FF8C;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 140, 0.2);
+    border-bottom: 1px solid rgba(0, 255, 140, 0.15);
+    padding-bottom: 0.5rem;
+}
+
+.project-desc {
+    color: #ccc;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.tech-tag {
+    background: rgba(0, 217, 255, 0.08);
+    color: #00D9FF;
+    border: 1px solid rgba(0, 217, 255, 0.25);
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.project-row:hover .tech-tag {
+    border-color: rgba(0, 255, 140, 0.4);
+    color: #00FF8C;
+    background: rgba(0, 255, 140, 0.05);
+}
+
+.project-action-buttons {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.project-action-buttons .btn {
+    padding: 0.75rem 1.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
 }
 
 footer {
@@ -892,18 +1062,72 @@ footer .signature {
 }
 
 .skill-bar {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    height: 10px;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.06) 6px,
+        transparent 6px,
+        transparent 8px
+    );
+    border-radius: 2px;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, #00FF8C, #00D9FF);
-    border-radius: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        #00FF8C,
+        #00FF8C 6px,
+        transparent 6px,
+        transparent 8px
+    );
+    box-shadow: 0 0 10px rgba(0, 255, 140, 0.3);
+    border-radius: 2px;
     transition: width 1s ease-out;
     will-change: width;
+}
+
+/* Creative Cyber Security Clearance Level Tags */
+.skill-level {
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    padding: 0.15rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid;
+    letter-spacing: 0.05em;
+}
+
+.skill-level.elite {
+    background: rgba(0, 255, 140, 0.1);
+    color: #00FF8C;
+    border-color: rgba(0, 255, 140, 0.35);
+    text-shadow: 0 0 5px rgba(0, 255, 140, 0.5);
+    box-shadow: 0 0 8px rgba(0, 255, 140, 0.08);
+}
+
+.skill-level.advanced {
+    background: rgba(0, 217, 255, 0.1);
+    color: #00D9FF;
+    border-color: rgba(0, 217, 255, 0.35);
+    text-shadow: 0 0 5px rgba(0, 217, 255, 0.5);
+    box-shadow: 0 0 8px rgba(0, 217, 255, 0.08);
+}
+
+.skill-level.operational {
+    background: rgba(180, 255, 0, 0.08);
+    color: #b4ff00;
+    border-color: rgba(180, 255, 0, 0.3);
+    text-shadow: 0 0 5px rgba(180, 255, 0, 0.4);
+}
+
+.skill-level.active {
+    background: rgba(255, 255, 255, 0.05);
+    color: #b5c7c0;
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 .timeline {
@@ -1731,6 +1955,34 @@ footer .signature {
         padding: 1.5rem;
     }
 
+    .projects-rows-container {
+        gap: 2rem;
+    }
+
+    .project-row {
+        flex-direction: column !important; /* Force stacked layouts on mobile */
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .project-image-box {
+        padding: 0.4rem;
+    }
+
+    .project-full-img {
+        max-height: 260px; /* Limit maximum height of image on mobile */
+    }
+
+    .project-details-column h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .project-action-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
     .project-card,
     .blog-body,
     .skill-category,
@@ -1982,7 +2234,14 @@ footer .signature {
 
 .cert-links {
     display: flex;
-    gap: 1.2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cert-links .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
 }
 
 /* Custom shadow/glow for the TryHackMe badge card (red theme) */

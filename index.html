@@ -196,7 +196,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Splunk (SPL &amp; Dashboards)</span>
-                        <span>85%</span>
+                        <span class="skill-level elite">ELITE</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0%" data-width="85%"></div>
@@ -205,7 +205,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Wazuh EDR &amp; ELK Stack</span>
-                        <span>75%</span>
+                        <span class="skill-level operational">OPERATIONAL</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0%" data-width="75%"></div>
@@ -214,7 +214,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Windows Event Logs &amp; Sysmon</span>
-                        <span>80%</span>
+                        <span class="skill-level advanced">ADVANCED</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0%" data-width="80%"></div>
@@ -227,7 +227,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Wireshark (Packet Analysis)</span>
-                        <span>85%</span>
+                        <span class="skill-level elite">ELITE</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0%" data-width="85%"></div>
@@ -236,7 +236,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Zeek &amp; Snort (NIDS)</span>
-                        <span>70%</span>
+                        <span class="skill-level active">ACTIVE</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0%" data-width="70%"></div>
@@ -245,7 +245,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Nmap (Port Scanning &amp; NSE)</span>
-                        <span>80%</span>
+                        <span class="skill-level advanced">ADVANCED</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0%" data-width="80%"></div>
@@ -258,7 +258,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Digital Forensics (Autopsy, Volatility)</span>
-                        <span>75%</span>
+                        <span class="skill-level operational">OPERATIONAL</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0%" data-width="75%"></div>
@@ -267,7 +267,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Threat Hunting (YARA &amp; Sigma)</span>
-                        <span>70%</span>
+                        <span class="skill-level active">ACTIVE</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0%" data-width="70%"></div>
@@ -276,7 +276,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Phishing Analysis &amp; IR reporting</span>
-                        <span>80%</span>
+                        <span class="skill-level advanced">ADVANCED</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 0%" data-width="80%"></div>
@@ -461,9 +461,9 @@
                     <span class="cert-date">2025</span>
                     <div class="cert-links">
                         <a href="src/assets/images/cisco_intro_cyber_cert.pdf" target="_blank"
-                            class="project-link">Certificate&rarr;</a>
+                            class="btn btn-secondary">Certificate &rarr;</a>
                         <a href="https://www.credly.com/badges/583b0f38-ebc5-4281-b914-d92cfca13eef/linked_in?t=svto8a"
-                            target="_blank" class="project-link">Verify &rarr;</a>
+                            target="_blank" class="btn btn-primary">Verify &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -495,8 +495,8 @@
                     <span class="cert-date">2025</span>
                     <div class="cert-links">
                         <a href="src/assets/images/cisco_network_basics_cert.pdf" target="_blank"
-                            class="project-link">Certificate &rarr;</a>
-                        <a href="https://www.credly.com/" target="_blank" class="project-link">Verify &rarr;</a>
+                            class="btn btn-secondary">Certificate &rarr;</a>
+                        <a href="https://www.credly.com/" target="_blank" class="btn btn-primary">Verify &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -505,73 +505,142 @@
 
     <section id="projects">
         <h2>Featured Projects</h2>
-        <div class="projects-grid">
+        
+        <div class="projects-rows-container">
             <!-- Project 1: CORTEX -->
-            <div class="project-card fade-in">
-                <div class="project-img-container">
-                    <a href="https://cortex-v1.streamlit.app/" target="_blank" title="Live ">
-                        <img src="src/assets/images/project_cortex.png" alt="CORTEX Project Screenshot"
-                            class="project-img" onerror="this.closest('.project-img-container').style.display='none';">
-                    </a>
+            <div class="project-row fade-in">
+                <div class="project-image-column">
+                    <div class="project-image-box">
+                        <a href="https://cortex-v1.streamlit.app/" target="_blank" title="Open Live Site">
+                            <img src="src/assets/images/project_cortex.png" alt="CORTEX Project Screenshot"
+                                class="project-full-img" onerror="this.closest('.project-image-box').classList.add('no-image');">
+                            <div class="project-image-scanline"></div>
+                            <div class="image-overlay">
+                                <span>🌐 Open Live Demo</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <h3>CORTEX</h3>
-                <p>CORTEX (Comprehensive Offline Retrieval and Tracking Evidence eXtractor) is a complete mobile device
-                    forensics analysis platform built with Python and Streamlit. <span class="project-sign">(by
-                        srinivas018)</span></p>
-                <div class="project-footer">
-                    <a href="https://github.com/Srinivas-018/CORTEX" target="_blank" class="project-link">Repo
-                        &rarr;</a>
+                <div class="project-details-column">
+                    <div class="project-header-meta">
+                        <span class="project-index">PROJECT // 01</span>
+                        <span class="project-sign">- srinivas018</span>
+                    </div>
+                    <h3>CORTEX</h3>
+                    <p class="project-desc">CORTEX (Comprehensive Offline Retrieval and Tracking Evidence eXtractor) is a complete mobile device forensics analysis platform built with Python and Streamlit. This interface operates entirely offline to preserve evidence integrity and retrieve deep logical artifacts.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">DFIR</span>
+                        <span class="tech-tag">Android Forensics</span>
+                    </div>
+                    <div class="project-action-buttons">
+                        <a href="https://github.com/Srinivas-018/CORTEX" target="_blank" class="btn btn-secondary">GitHub Repo &rarr;</a>
+                        <a href="https://cortex-v1.streamlit.app/" target="_blank" class="btn btn-primary">Live Demo &rarr;</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Project 2: NIDS -->
-            <div class="project-card fade-in" style="animation-delay: 0.1s;">
-                <div class="project-img-container">
-                    <a href="https://nids-5t06mpic0-srinivas-018s-projects.vercel.app/" target="_blank" title="Live">
-                        <img src="src/assets/images/project_nids.png" alt="NIDS Project Screenshot" class="project-img"
-                            onerror="this.closest('.project-img-container').style.display='none';">
-                    </a>
+            <div class="project-row fade-in">
+                <div class="project-image-column">
+                    <div class="project-image-box">
+                        <a href="https://nids-5t06mpic0-srinivas-018s-projects.vercel.app/" target="_blank" title="Open Live Site">
+                            <img src="src/assets/images/project_nids.png" alt="NIDS Project Screenshot"
+                                class="project-full-img" onerror="this.closest('.project-image-box').classList.add('no-image');">
+                            <div class="project-image-scanline"></div>
+                            <div class="image-overlay">
+                                <span>🌐 Open Live Demo</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <h3>NIDS</h3>
-                <p>Sentinel is a custom-built Network Intrusion Detection System built with Python and Scapy to monitor
-                    traffic in real time and catch suspicious behavior.</p>
-                <div class="project-footer">
-                    <a href="https://github.com/Srinivas-018/NIDS" target="_blank" class="project-link">Repo&rarr;</a>
+                <div class="project-details-column">
+                    <div class="project-header-meta">
+                        <span class="project-index">PROJECT // 02</span>
+                        <span class="project-sign">- srinivas018</span>
+                    </div>
+                    <h3>NIDS</h3>
+                    <p class="project-desc">Sentinel is a custom-designed Network Intrusion Detection System built using Python and Scapy. It monitors packet transmission in real time, logs security events, and catches suspicious patterns such as port scans or anomalous traffic payloads.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scapy</span>
+                        <span class="tech-tag">Networking</span>
+                        <span class="tech-tag">Threat Detection</span>
+                    </div>
+                    <div class="project-action-buttons">
+                        <a href="https://github.com/Srinivas-018/NIDS" target="_blank" class="btn btn-secondary">GitHub Repo &rarr;</a>
+                        <a href="https://nids-5t06mpic0-srinivas-018s-projects.vercel.app/" target="_blank" class="btn btn-primary">Live Demo &rarr;</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Project 3: XRECON -->
-            <div class="project-card fade-in" style="animation-delay: 0.2s;">
-                <div class="project-img-container">
-                    <a href="https://x-recon.streamlit.app/" target="_blank" title="Live">
-                        <img src="src/assets/images/project_xrecon.png" alt="XRECON Project Screenshot"
-                            class="project-img" onerror="this.closest('.project-img-container').style.display='none';">
-                    </a>
+            <div class="project-row fade-in">
+                <div class="project-image-column">
+                    <div class="project-image-box">
+                        <a href="https://x-recon.streamlit.app/" target="_blank" title="Open Live Site">
+                            <img src="src/assets/images/project_xrecon.png" alt="XRECON Project Screenshot"
+                                class="project-full-img" onerror="this.closest('.project-image-box').classList.add('no-image');">
+                            <div class="project-image-scanline"></div>
+                            <div class="image-overlay">
+                                <span>🌐 Open Live Demo</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <h3>XRECON</h3>
-                <p>X-RECON is an automated reconnaissance framework that combines Nmap precision with Python automation
-                    to generate structured, actionable intelligence.</p>
-                <div class="project-footer">
-                    <a href="https://github.com/Srinivas-018/X-RECON" target="_blank" class="project-link">Repo
-                        &rarr;</a>
+                <div class="project-details-column">
+                    <div class="project-header-meta">
+                        <span class="project-index">PROJECT // 03</span>
+                        <span class="project-sign">- srinivas018</span>
+                    </div>
+                    <h3>XRECON</h3>
+                    <p class="project-desc">X-RECON is an automated reconnaissance framework merging the precision of Nmap scanning with Python logic. It automates information gathering, scans open ports, performs service banner grabbing, and packages intelligence reports.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Nmap</span>
+                        <span class="tech-tag">Reconnaissance</span>
+                        <span class="tech-tag">Automation</span>
+                    </div>
+                    <div class="project-action-buttons">
+                        <a href="https://github.com/Srinivas-018/X-RECON" target="_blank" class="btn btn-secondary">GitHub Repo &rarr;</a>
+                        <a href="https://x-recon.streamlit.app/" target="_blank" class="btn btn-primary">Live Demo &rarr;</a>
+                    </div>
                 </div>
             </div>
 
             <!-- Project 4: Cyber-Risk Quantification Tool -->
-            <div class="project-card fade-in" style="animation-delay: 0.3s;">
-                <div class="project-img-container">
-                    <a href="https://cyber-risk-quantification-tool-ou0l1vh7d-srinivas-018s-projects.vercel.app"
-                        target="_blank" title="Live ">
-                        <img src="src/assets/images/project_cyber_risk.png"
-                            alt="Cyber-Risk Quantification Tool Screenshot" class="project-img"
-                            onerror="this.closest('.project-img-container').style.display='none';">
-                    </a>
+            <div class="project-row fade-in">
+                <div class="project-image-column">
+                    <div class="project-image-box">
+                        <a href="https://cyber-risk-quantification-tool-ou0l1vh7d-srinivas-018s-projects.vercel.app" target="_blank" title="Open Live Site">
+                            <img src="src/assets/images/project_cyber_risk.png" alt="Cyber-Risk Quantification Tool Screenshot"
+                                class="project-full-img" onerror="this.closest('.project-image-box').classList.add('no-image');">
+                            <div class="project-image-scanline"></div>
+                            <div class="image-overlay">
+                                <span>🌐 Open Live Demo</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <h3>Cyber-Risk Quantification Tool</h3>
-                <p>Tool-137 is an AI-powered web app that quantifies cyber risks with real-time AI descriptions, risk
-                    recommendations, and reporting.</p>
-                <a href="https://github.com/Srinivas-018/cyber-risk-quantification-tool" target="_blank"
-                    class="project-link">Repo &rarr;</a>
+                <div class="project-details-column">
+                    <div class="project-header-meta">
+                        <span class="project-index">PROJECT // 04</span>
+                        <span class="project-sign">- srinivas018</span>
+                    </div>
+                    <h3>Cyber-Risk Quantification Tool</h3>
+                    <p class="project-desc">Tool-137 is an AI-powered web application that quantifies security and operational risks, providing real-time AI security advice, compliance mappings, risk severity evaluations, and printable PDF threat reports.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">React / JS</span>
+                        <span class="tech-tag">AI Integration</span>
+                        <span class="tech-tag">Risk Assessment</span>
+                        <span class="tech-tag">Cyber-Risk</span>
+                    </div>
+                    <div class="project-action-buttons">
+                        <a href="https://github.com/Srinivas-018/cyber-risk-quantification-tool" target="_blank" class="btn btn-secondary">GitHub Repo &rarr;</a>
+                        <a href="https://cyber-risk-quantification-tool-ou0l1vh7d-srinivas-018s-projects.vercel.app" target="_blank" class="btn btn-primary">Live Demo &rarr;</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

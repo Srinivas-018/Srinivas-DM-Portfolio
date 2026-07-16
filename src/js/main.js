@@ -477,5 +477,4 @@ window.closeCertModal = function() {
         modal.style.display = "none";
     }
 };
-
 // End of file - signed: srinivas018
