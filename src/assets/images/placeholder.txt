@@ -1,0 +1,22 @@
+Certs, Badges & Projects Folder Map:
+------------------------------------
+Please drop your files into this directory (src/assets/images/) with these exact names:
+
+1. Project Screenshots (Option 1 Mockups):
+   - CORTEX: project_cortex.png (The web UI screenshot)
+   - NIDS: project_nids.png (The web UI screenshot)
+   - XRECON: project_xrecon.png (The CLI terminal screenshot - optional, card hides it if missing)
+   - Cyber-Risk quantification: project_cyber_risk.png (The web UI screenshot)
+
+2. TryHackMe Profile & Path:
+   - TryHackMe Logo: thm_logo.svg (Will be loaded in the profile section, falls back to inline SVG if not found)
+   - Pre-Security Badge: thm_pre_security_badge.svg (Will be loaded inside the path card, falls back to glowing red PDF link button if not found)
+   - Pre-Security PDF Certificate: thm_pre_security.pdf (The full certificate PDF)
+
+3. Cisco Introduction to Cybersecurity:
+   - Badge Image: cisco_intro_cyber_badge.png (The hex badge image)
+   - PDF Certificate: cisco_intro_cyber_cert.pdf (The full certificate PDF)
+
+4. Cisco Network Basics:
+   - Badge Image: cisco_network_basics_badge.png (The hex badge image)
+   - PDF Certificate: cisco_network_basics_cert.pdf (The full certificate PDF)

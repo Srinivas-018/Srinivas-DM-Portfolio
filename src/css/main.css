@@ -1183,6 +1183,464 @@ footer .signature {
     transition: all 0.3s;
 }
 
+/* TryHackMe SOC Dashboard Styles */
+.thm-dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    margin-top: 2rem;
+    align-items: stretch;
+}
+
+.thm-card {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(0, 255, 140, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 0 25px rgba(0, 255, 140, 0.05);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.thm-card:hover {
+    box-shadow: 0 0 35px rgba(0, 255, 140, 0.15), 0 0 0 1px rgba(0, 255, 140, 0.3);
+    border-color: #00FF8C;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.thm-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.thm-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 74, 74, 0.3);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 0 15px rgba(255, 74, 74, 0.1);
+}
+
+.thm-user-info h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.thm-title {
+    color: #00D9FF;
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+}
+
+.thm-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.thm-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.thm-stat-val {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #00FF8C;
+}
+
+.thm-stat-lbl {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.thm-profile-footer {
+    display: flex;
+    width: 100%;
+}
+
+.thm-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+    border: 1px solid #00D9FF;
+    color: #00D9FF;
+    background: transparent;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.thm-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+    color: #fff;
+}
+
+.badges-card h4, .graph-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    border-left: 3px solid #00FF8C;
+    padding-left: 0.8rem;
+}
+
+.thm-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+.thm-badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.thm-badge-item::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 105%;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    background: rgba(18, 18, 18, 0.95);
+    color: #eee;
+    font-size: 0.75rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #00FF8C;
+    width: 220px;
+    text-align: center;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    line-height: 1.4;
+}
+
+.thm-badge-item:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.thm-badge-item:hover {
+    border-color: #00FF8C;
+    background: rgba(0, 255, 140, 0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 140, 0.1);
+}
+
+.badge-icon {
+    margin-bottom: 0.6rem;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thm-badge-item:hover .badge-icon {
+    transform: scale(1.1);
+}
+
+.badge-title {
+    font-size: 0.75rem;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.thm-badge-item:hover .badge-title {
+    color: #fff;
+}
+
+.radar-container {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+#thmSkillChart {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.graph-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #888;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legend-dot.defensive {
+    background: #00D9FF;
+    box-shadow: 0 0 8px rgba(0, 217, 255, 0.6);
+}
+
+.thm-rooms-directory {
+    margin-top: 3rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 3rem;
+}
+
+.directory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.directory-header h3 {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.search-wrapper {
+    position: relative;
+    width: min(100%, 350px);
+}
+
+#roomSearch {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    padding-right: 2.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+#roomSearch:focus {
+    outline: none;
+    border-color: #00FF8C;
+    box-shadow: 0 0 15px rgba(0, 255, 140, 0.15);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    pointer-events: none;
+    color: #888;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.6rem 1.2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #888;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    color: #fff;
+    border-color: rgba(0, 255, 140, 0.5);
+}
+
+.filter-btn.active {
+    background: rgba(0, 255, 140, 0.1);
+    border-color: #00FF8C;
+    color: #00FF8C;
+    box-shadow: 0 0 12px rgba(0, 255, 140, 0.2);
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.room-card {
+    background: rgba(26, 26, 26, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+}
+
+.room-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 255, 140, 0.1);
+    color: #00FF8C;
+    border: 1px solid rgba(0, 255, 140, 0.3);
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.room-badge {
+    align-self: flex-start;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.room-badge.siem {
+    background: rgba(255, 140, 0, 0.15);
+    color: #FF8C00;
+    border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+.room-badge.network {
+    background: rgba(0, 217, 255, 0.15);
+    color: #00D9FF;
+    border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.room-badge.dfir {
+    background: rgba(0, 255, 140, 0.15);
+    color: #00FF8C;
+    border: 1px solid rgba(0, 255, 140, 0.3);
+}
+
+.room-badge.threat-intel {
+    background: rgba(176, 38, 255, 0.15);
+    color: #b026ff;
+    border: 1px solid rgba(176, 38, 255, 0.3);
+}
+
+.room-card h4 {
+    font-size: 1.15rem;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    padding-right: 70px;
+}
+
+.room-card p {
+    font-size: 0.85rem;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.room-progress-container {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.room-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #00FF8C, #00D9FF);
+    box-shadow: 0 0 5px rgba(0, 255, 140, 0.5);
+}
+
+.room-progress-bar.blue {
+    background: linear-gradient(90deg, #00D9FF, #0077FF);
+    box-shadow: 0 0 5px rgba(0, 217, 255, 0.5);
+}
+
+.room-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 0.8rem;
+    color: #888;
+}
+
+.room-footer a {
+    color: #00D9FF;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.room-footer a:hover {
+    color: #00FF8C;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 255, 140, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 255, 140, 0.1);
+    background: rgba(26, 26, 26, 0.8);
+}
+
 /* Easter egg styles removed */
 
 @media (max-width: 768px) {
@@ -1311,4 +1769,335 @@ footer .signature {
     .btn {
         text-align: center;
     }
+
+    /* TryHackMe Responsive Overrides */
+    .thm-dashboard-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .thm-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .thm-badges-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .directory-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .search-wrapper {
+        width: 100%;
+    }
+    
+    .rooms-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Added Certificate and TryHackMe Path Completion Styles --- */
+
+/* Certificate image container inside certification cards */
+.cert-img-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cert-img-container:hover .cert-img {
+    transform: scale(1.05);
+}
+
+/* Glowing overlay on hover */
+.cert-img-container::after {
+    content: '🔍 Click to Enlarge';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00FF8C;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border: 1px solid rgba(0, 255, 140, 0.3);
+    border-radius: 8px;
+    text-shadow: 0 0 5px rgba(0, 255, 140, 0.5);
+}
+
+.cert-img-container:hover::after {
+    opacity: 1;
+}
+
+/* Modal styling for zooming/enlarging certificate */
+.cert-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.95);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.cert-modal-content {
+    max-width: 90%;
+    max-height: 80vh;
+    border: 1.5px solid #00FF8C;
+    border-radius: 12px;
+    box-shadow: 0 0 45px rgba(0, 255, 140, 0.35);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.cert-modal:hover .cert-modal-content {
+    transform: scale(1);
+}
+
+.cert-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.cert-modal-close:hover {
+    color: #00FF8C;
+    text-shadow: 0 0 10px rgba(0, 255, 140, 0.5);
+}
+
+/* TryHackMe Path Card Styles */
+.path-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.profile-card-desc, .path-card-desc {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.path-badge {
+    font-size: 2.2rem;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+    animation: pulseGlow 2s infinite alternate;
+}
+
+.path-content {
+    flex: 1;
+}
+
+.path-content h4 {
+    color: #00FF8C;
+    font-size: 1.05rem;
+    margin: 0 0 0.4rem 0;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-family: 'Courier New', monospace;
+}
+
+@keyframes pulseGlow {
+    from {
+        transform: scale(1);
+        filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+    }
+    to {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+    }
+}
+
+/* Cisco Certificate Badges Display Styles */
+.cert-badge-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2rem 0;
+    height: 120px;
+    width: 100%;
+}
+
+.cert-badge-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cert-badge-img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.35));
+    transition: all 0.3s ease;
+}
+
+.cert-card:hover .cert-badge-img {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 15px rgba(0, 255, 140, 0.6));
+}
+
+.cert-links {
+    display: flex;
+    gap: 1.2rem;
+}
+
+/* Custom shadow/glow for the TryHackMe badge card (red theme) */
+.path-card .cert-badge-img {
+    filter: drop-shadow(0 0 8px rgba(255, 74, 74, 0.45));
+}
+
+.path-card:hover .cert-badge-img {
+    filter: drop-shadow(0 0 15px rgba(255, 74, 74, 0.7));
+}
+
+/* TryHackMe PDF Certificate Fallback Styles */
+.thm-pdf-cert-link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.thm-pdf-cert-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    height: 140px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px dashed rgba(255, 74, 74, 0.35);
+    border-radius: 8px;
+    color: #ff4a4a;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.thm-pdf-cert-placeholder .pdf-icon {
+    width: 48px;
+    height: 48px;
+    stroke: #ff4a4a;
+    filter: drop-shadow(0 0 8px rgba(255, 74, 74, 0.3));
+    transition: all 0.3s ease;
+}
+
+.thm-pdf-cert-link:hover .thm-pdf-cert-placeholder {
+    border-color: #ff4a4a;
+    box-shadow: 0 0 20px rgba(255, 74, 74, 0.25), inset 0 0 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.thm-pdf-cert-link:hover .thm-pdf-cert-placeholder .pdf-icon {
+    stroke: #fff;
+    filter: drop-shadow(0 0 12px rgba(255, 74, 74, 0.65));
+    transform: scale(1.08);
+}
+
+/* Project Mockup Image Styles */
+.project-img-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+    display: block;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-img-container:hover .project-img {
+    transform: scale(1.05);
+}
+
+/* Overlay text indicating click action */
+.project-img-container::after {
+    content: '🌐 Open Project';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00FF8C;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border: 1px solid rgba(0, 255, 140, 0.3);
+    border-radius: 8px;
+    text-shadow: 0 0 5px rgba(0, 255, 140, 0.5);
+}
+
+.project-img-container:hover::after {
+    opacity: 1;
+}
+
+/* Project Cards Footer Links Alignments */
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }

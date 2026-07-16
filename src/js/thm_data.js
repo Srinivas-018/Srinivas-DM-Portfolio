@@ -1,0 +1,140 @@
+// Live TryHackMe SOC data - managed by update_thm.py
+const thmData = {
+    profile: {
+        username: "srinivas018",
+        level: 10,
+        rank: "Top 3%",
+        totalRooms: 65,
+        totalBadges: 12
+    },
+    skills: {
+        networkMonitoring: 85,
+        siemLogAnalysis: 80,
+        endpointSecurity: 75,
+        incidentResponse: 80,
+        digitalForensics: 70,
+        threatIntelligence: 75
+    },
+    rooms: [
+        {
+            id: "splunk101",
+            title: "Splunk: Basic & Tutorial",
+            category: "siem",
+            categoryName: "SIEM",
+            xp: 250,
+            completed: true,
+            description: "Learned SPL searching logic, data ingestion configurations, and dashboard creation for monitoring.",
+            url: "https://tryhackme.com/room/splunk101"
+        },
+        {
+            id: "introductiontosiem",
+            title: "Introduction to SIEM",
+            category: "siem",
+            categoryName: "SIEM",
+            xp: 180,
+            completed: true,
+            description: "Studied logs correlation, rules generation, security monitoring flows, and alerting pipelines.",
+            url: "https://tryhackme.com/room/introductiontosiem"
+        },
+        {
+            id: "wazuh",
+            title: "Wazuh EDR/SIEM",
+            category: "siem",
+            categoryName: "SIEM",
+            xp: 220,
+            completed: true,
+            description: "Configured Wazuh agents, managed decoders/rules, monitored file integrity, and analyzed threat events.",
+            url: "https://tryhackme.com/room/wazuh"
+        },
+        {
+            id: "wiresharkpacketanalysis",
+            title: "Wireshark: Packet Analysis",
+            category: "network",
+            categoryName: "Network",
+            xp: 300,
+            completed: true,
+            description: "Analyzed network streams, filtered raw PCAPs, and detected anomalies like ARP spoofing or port scans.",
+            url: "https://tryhackme.com/room/wiresharkpacketanalysis"
+        },
+        {
+            id: "zeek",
+            title: "Zeek (formerly Bro)",
+            category: "network",
+            categoryName: "Network",
+            xp: 240,
+            completed: true,
+            description: "Monitored live traffic logs, parsed network signatures, and used custom scripting for automatic alerts.",
+            url: "https://tryhackme.com/room/zeek"
+        },
+        {
+            id: "snort",
+            title: "Snort NIDS Rule-Writing",
+            category: "network",
+            categoryName: "Network",
+            xp: 210,
+            completed: true,
+            description: "Wrote Snort signatures to detect ICMP flooding, brute-force patterns, and bad payload footprints.",
+            url: "https://tryhackme.com/room/snort"
+        },
+        {
+            id: "autopsy",
+            title: "Autopsy Forensics Tool",
+            category: "dfir",
+            categoryName: "DFIR",
+            xp: 280,
+            completed: true,
+            description: "Extracted raw disk images, recovered deleted artifacts, reviewed metadata, and generated forensic reports.",
+            url: "https://tryhackme.com/room/autopsy"
+        },
+        {
+            id: "volatility",
+            title: "Volatility Memory Forensics",
+            category: "dfir",
+            categoryName: "DFIR",
+            xp: 320,
+            completed: true,
+            description: "Analyzed RAM dumps to uncover injected DLLs, running processes, hidden network sockets, and malware.",
+            url: "https://tryhackme.com/room/volatility"
+        },
+        {
+            id: "windowsforensics1",
+            title: "Windows Forensics Hives",
+            category: "dfir",
+            categoryName: "DFIR",
+            xp: 260,
+            completed: true,
+            description: "Analyzed registry, Prefetch, Shellbags, and security logs to construct event timelines during compromise.",
+            url: "https://tryhackme.com/room/windowsforensics1"
+        },
+        {
+            id: "phishingemails101",
+            title: "Phishing Emails 101",
+            category: "threat-intel",
+            categoryName: "Threat Intel",
+            xp: 200,
+            completed: true,
+            description: "Analyzed raw email headers, extracted malicious attachment hashes, and decoded spoofing attempts (SPF/DKIM).",
+            url: "https://tryhackme.com/room/phishingemails101"
+        },
+        {
+            id: "yara",
+            title: "YARA Rules for Detection",
+            category: "threat-intel",
+            categoryName: "Threat Intel",
+            xp: 220,
+            completed: true,
+            description: "Wrote custom pattern matching rules to identify and classify malware based on strings and byte patterns.",
+            url: "https://tryhackme.com/room/yara"
+        },
+        {
+            id: "misp",
+            title: "Threat Intelligence: MISP",
+            category: "threat-intel",
+            categoryName: "Threat Intel",
+            xp: 240,
+            completed: true,
+            description: "Shared Indicators of Compromise (IoCs) and structured threat feeds to enable proactive threat defense.",
+            url: "https://tryhackme.com/room/misp"
+        }
+    ]
+};
